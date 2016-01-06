@@ -109,6 +109,7 @@ add-apt-repository -y ppa:zfs-native/stable
 apt-get update
 apt-get -y --force-yes install libc6-dev zfsutils
 mkdir -p /var/opt/flocker
+modprobe zfs
 truncate --size 10G /var/opt/flocker/pool-vdev
 zpool create flocker /var/opt/flocker/pool-vdev
 """)
